@@ -149,6 +149,10 @@ class BVSelect {
                               FixVerticalViewPort();
                         }
 
+						// Dispatch change event
+						const changeEvent = new Event( "change", {bubbles: true} );
+						document.getElementById( this.selector ).dispatchEvent( changeEvent );
+
                         // When click, resets search filter
                         if (this.searchbox == true) {
                             document.getElementById("input_" + randomID).value = "";
